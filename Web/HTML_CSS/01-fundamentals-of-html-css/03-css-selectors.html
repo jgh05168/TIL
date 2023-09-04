@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>       /*css 선택자로 변경-->*/
+    * {         /*전체 선택자*/
+      color: cornflowerblue;
+    }
+    /* 모든 h2 요소의 텍스트 색을 coral 색으로 변경 : h2 text에만 적용 가능*/
+    h2 {        /*요소 선택자*/
+      color: coral;
+    }
+    h3, h4 {
+      color: lightcoral;
+    }
+
+    .green {    /* 클래스 선택자*/
+      color: darkseagreen;
+    }
+
+    #pink {     /* 아이디 선택자(잘 안씀)*/
+      color: rgb(255, 167, 211);
+    }
+
+    /* 자식 결합자*/
+    .green > span {
+      font-size: 50px;
+    }
+
+    /* 자손 결합자*/
+    .green li {             /* green class 아래 모든 li 태그*/
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="green">Heading</h1>
+  <h2>선택자</h2>
+  <h3>연습</h3>
+  <h4>반가워요</h4>
+  <p id="pink">과목 목록</p>
+  <ul class="green">
+    <li>파이썬</li>
+    <li>알고리즘</li>
+    <li>웹
+      <ol>
+        <li id="pink">HTML</li>
+        <li>CSS</li>
+        <li>PYTHON</li>
+      </ol>
+    </li>
+  </ul>
+  <p class="green">Lorem, <span>ipsum</span> dolor.</p>
+</body>
+
+</html>
