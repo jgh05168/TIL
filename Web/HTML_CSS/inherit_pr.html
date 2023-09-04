@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: yellow;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        .blue {
+            color: black;       /*상속을 받기 싫다면 재정의(덮어쓰기)를 해주면 된다.*/
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border: inherit;    /* 상속을 받지 못하는 것을 상속받게 하려면 inherit 사용. : 부모로부터 상속받는다 */
+        }
+    </style>
+</head>
+<body>
+    <div class="red">red
+        <div class="blue">blue</div>
+    </div>
+</body>
+</html>
