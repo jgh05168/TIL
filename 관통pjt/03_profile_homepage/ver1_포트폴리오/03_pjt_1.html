@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read my bio</title>
+    <!-- font 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+   <!-- 부트스트랩 적용 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- navbar 설정 -->
+    <div style="position: relative;">
+        <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top" >
+            <div class="container-fluid">
+                <!-- 화면 작아졌을 때 양쪽 정렬-->
+                <div class="container-child">
+                    <a class="navbar-brand cc images1" href="#">
+                        <img src="mainlogo.png" alt="Bootstrap" width="40" height="40">
+                        <a class="navbar-brand nav_fontsize fw-bold" href="#">Gyuhun Jeon</a>
+                      </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-automb-md-0 nav_fontsize">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#frontpage">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#profile">Profile</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#project">Project</a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+          </nav>    
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <div id="frontpage" class="space"></div>
+    <main class="frontpage cc">
+        <div>
+            <div class="mainfont">
+                Always Do Programming
+            </div>
+        </div>
+    </main>
+    <div id="profile" class="space"></div>
+
+    <!-- 자기 소개 -->
+    <section class="profile cc">
+        <div class="d-flex col-sm-5" style=" flex-direction: column; justify-content: space-evenly;">
+            <div>
+                <img src="IMG_7144.JPG" alt="me" width="200px" style="opacity: 0.8;">
+            </div>
+            <div class="icon">
+                <div>
+                    <a href="https://github.com/jgh05168"><img src="github.png" alt="github" width="30px"></a>
+                </div>
+                <div>
+                    <a href="https://solved.ac/profile/jgh05168"><img src="boj.png" alt="boj" width="30px"></a>
+                </div>
+            </div>
+        </div>
+        <div class="cc profile_font col-sm-7" style="flex-direction: column;">
+            <div>
+                <div>
+                    <h1>About me</h1>
+                </div>
+                <p class="me-3 ms-3">안녕하십니까. SSAFY 10기 광주 3반 전규훈 입니다. 고려대학교 세종캠퍼스 전자 및 정보공학과를 졸업하였고, 프로그래밍 실력을 늘리기 위해 꾸준히 공부중입니다. 잘 부탁드립니다.</p>
+                <div class="mt-2">
+                    <div class="d-flex" style="height: 40px;">
+                        <img src="name.png" alt="name" width="30px" height="30px" class="m-2">
+                        <p class="offset-1">Name</p>
+                        <p class="offset-1">전 규 훈 (Guyhun Jeon)</p>
+                    </div>
+                    <div class="d-flex" style="height: 40px;">
+                        <img src="phone.png" alt="phone" width="30px" height="30px" class="m-2">
+                        <p class="offset-1">Phone</p>
+                        <p class="offset-1">010 - 3895 - 6950</p>
+                    </div>
+                    <div class="d-flex" style="height: 40px;">
+                        <img src="mail.png" alt="email" width="30px" height="20px" class="m-2">
+                        <p class="offset-1">Emali</p>
+                        <p class="offset-1"><a href="jgh05168@gmail.com"> jgh05168@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div id="skills" class="space"></div>
+
+    <!-- 기술 스택 -->
+    <section class="skills cc" style="flex-direction: column;">
+        <div class="container">
+            <h1 class="display-1">Skills</h1>
+        </div>
+        <!-- 전체 카드를 포함하는 컨테이너 -->
+        <div class="container">
+            <!-- 콘텐츠들을 포함하는 행 한개 -->
+            <div class="row">
+                <!-- python -->
+                <div class="col col-4">
+                    <div class="card h-100" style="border-radius: 15px;">
+                        <img src="python.png" class="card-img-top" alt="python">
+                        <div class="card-body text-center cardtb">
+                            <div>
+                                <h3 class="card-title" >Python</h3>
+                            </div>                               
+                        </div>
+                    </div>
+                </div>
+                <!-- html and css -->
+                <div class="col col-4">
+                    <div class="card h-100" style="border-radius: 15px;">
+                        <img src="html_css.png" class="card-img-top" alt="htmlcss">
+                        <div class="card-body text-center cardtb">
+                            <div>
+                                <h5 class="card-title" >HTML & CSS</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- c -->
+                <div class="col col-4">
+                    <div class="card h-100" style="border-radius: 15px;">
+                        <img src="c.png" class="card-img-top" alt="c">
+                        <div class="card-body text-center cardtb">
+                            <div>
+                                <h3 class="card-title" >C</h3>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+    <div id="project" class="space"></div>
+
+    <!-- 프로젝트 -->
+    <section id="project" class="project d-flex" style="flex-direction: column; height: 100%;">
+        <div><h1 class="display-1 pt-3">Education & Projects</h1></div>
+        <div class="edpro">
+            <div class="edpro m-3 mt-0" style="flex-direction: column; height: 100%; width: 50%;">
+                <div style="border-bottom: 1px dashed black;">
+                    <h1>Education</h1>
+                </div>
+                <div class="profile_font" style="flex-direction: column;">
+                    <div>
+                        <h2 style="text-align: left;">BS.</h2>
+                    </div>
+                    <div class="d-flex">
+                        <div>
+                            <p>Korea University</p>
+                            <p> - Department of Electronic & Information</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="edpro m-3 mt-0" style="flex-direction: column; height: 100%; width: 50%;">
+                <div style="border-bottom: 1px dashed black;">
+                    <h1>Projects</h1>
+                </div>
+                <div class="profile_font">
+                    <p style="text-align: left;">
+                        Project 1 : Deepfake detection using CNN models (2023.03 ~ 2023.06)
+                    </p>
+                    <p style="text-align: left;">
+                        Project 2 : Design the 4WD Autonomous Vehicle using Pixy cam(2021.09 ~ 
+2021.12)
+                    </p>
+                    <p style="text-align: left;">
+                        Project 3 : Building Autonomous Vehicle Module using smart car kit(2022.01 ~ 
+2022.04)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div id="profile" class="space"></div>
+
+    <!-- 꼬리말 -->
+    <footer class="footer cc">
+        <h3 class="m-1" style="text-align: center;">Please email me</h3>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+</html>
