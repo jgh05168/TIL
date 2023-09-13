@@ -18,16 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from articles import views
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     # articles1
-    path('articles1/', include("articles.urls")),
-
+    path('articles1/', include("articles.urls"), name="articles1"),
 
     # articles2
-    path('articles2/', include("articles2.urls"))
+    path('articles2/', include("articles2.urls"), name="articles2")
 ]
 
