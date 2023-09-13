@@ -1,0 +1,10 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+    <form action="/catch/" method="GET">          
+        <label for="message"> 메세지 :  </label>             
+        <input type="text" name="message" id="message">     
+        <input type="submit" value="제출!">   <!--입력을 보내주는 과정 -->
+    </form>
+{% endblock content %}
+

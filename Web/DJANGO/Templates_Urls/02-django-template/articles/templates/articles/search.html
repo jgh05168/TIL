@@ -1,0 +1,10 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+    <form action="https://search.naver.com/search.naver" method="GET">          <!--GET : 사용자의 값을 key=value 형식으로 사이트에 노출시켜준다-->
+        <label for="message"> 검색어 </label>             <!--label & id를 설정해 주어 input과 연결시켜줄 수 있다.-->
+        <input type="text" name="query" id="message">     <!--사용자의 입력을 직접적으로 받는 부분. 입력을 받는 부분이므로 닫는 태그가 없다.-->
+        <input type="submit" value="제출!">   <!--입력을 보내주는 과정이 필요하다. -->
+    </form>
+{% endblock content %}
+

@@ -1,0 +1,10 @@
+{% extends "articles/base.html" %}    <!--이 한줄로 base.html의 전체 템플릿을 들고온 것이다.-->
+
+{% block style %}
+  {% comment %} 이렇게 작성하면 base.html의 head 부분에 내용이 작성된다. {% endcomment %}
+{% endblock style %}
+
+
+{% block content %}         <!-- block 이름은 base의 쓰고자 하는 위치의 block 태그와 같아야 한다-->
+  <h1>안녕 {{ name }}</h1>
+{% endblock content %}    
