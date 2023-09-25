@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>DETAIL</h2>
+    <h3>{{article.pk}} 번쨰 글</h3>
+    <hr>
+    <p>{{article.title}}</p>
+    <p>{{article.content}}</p>
+    <p>{{article.created_at}}</p>
+    <p>{{article.updated_at}}</p>
+    <hr>
+    <a href="{% url "articles:edit" article.pk %}">[edit]</a>
+    <form action="{% url "articles:delete" article.pk %}" method='POST'>
+        {% csrf_token %}    {% comment %} POST 요청 시 무조건 존재해야 한다. {% endcomment %}
+        <input type="submit" value= 'DELETE'>
+    </form>
+    <a href="{% url "articles:index" %}">[back]</a>
+</body>
+</html>

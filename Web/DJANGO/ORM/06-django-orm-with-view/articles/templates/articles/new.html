@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NEW</h1>
+    <form action="{% url "articles:create" %}" method='POST'>    {% comment %}action="보내고자 하는 주소"{% endcomment %}
+        {% csrf_token %}        {% comment %} secret tag{% endcomment %}
+        <div>
+            <label for="title">제목 : </label>
+            <input type="text" name="title" id="title">  {% comment %}name : 넘기는 값의 이름{% endcomment %}
+        </div>
+        <div>
+            <label for="content">내용 : </label>
+            <textarea name="content" id="content" cols="30" rows="10">        {% comment %}col, row : textbox 초기 값{% endcomment %}
+
+            </textarea>
+        </div>
+        <input type="submit">
+    </form>
+</body>
+</html>
