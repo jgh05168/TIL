@@ -30,7 +30,9 @@ def create(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
         if form.is_valid():
-            article = form.save()
+            article = form.save(commit=False)
+            article.user = request.user
+            form.save()
             return redirect('articles:detail', article.pk)
     else:
         form = ArticleForm()
@@ -43,20 +45,24 @@ def create(request):
 @login_required
 def delete(request, pk):
     article = Article.objects.get(pk=pk)
-    article.delete()
+    if article.user == request.user:
+        article.delete()
     return redirect('articles:index')
 
 
 @login_required
 def update(request, pk):
     article = Article.objects.get(pk=pk)
-    if request.method == 'POST':
-        form = ArticleForm(request.POST, instance=article)
-        if form.is_valid:
-            form.save()
-            return redirect('articles:detail', article.pk)
+    if request.user == article.user:        # 사용자 확인
+        if request.method == 'POST':
+            form = ArticleForm(request.POST, instance=article)
+            if form.is_valid:
+                form.save()
+                return redirect('articles:detail', article.pk)
+        else:
+            form = ArticleForm(instance=article)
     else:
-        form = ArticleForm(instance=article)
+        return redirect('articles:index')
     context = {
         'article': article,
         'form': form,
@@ -70,6 +76,7 @@ def comments_create(request, pk):
     if comment_form.is_valid():
         comment = comment_form.save(commit=False)
         comment.article = article
+        comment.user = request.user
         comment_form.save()
         return redirect('articles:detail', article.pk)
     context = {
@@ -81,5 +88,6 @@ def comments_create(request, pk):
 
 def comments_delete(request, article_pk, comment_pk):
     comment = Comment.objects.get(pk=comment_pk)
-    comment.delete()
+    if comment.user == request.user:
+        comment.delete()
     return redirect('articles:detail', article_pk)
