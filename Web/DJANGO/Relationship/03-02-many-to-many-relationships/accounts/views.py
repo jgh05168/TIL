@@ -4,7 +4,9 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 from .forms import CustomUserCreationForm, CustomUserChangeForm
+
 
 
 # Create your views here.
@@ -83,3 +85,26 @@ def change_password(request, user_pk):
         'form': form,
     }
     return render(request, 'accounts/change_password.html', context)
+
+
+def profile(request, username):
+    # User의 detail 페이지로 동작
+    # User를 조회
+    person = get_user_model().objects.get(username=username)        # get_user_model명령어를 사용하여 User 클래스 간접참조
+    context = {
+        'person': person
+    }
+    return render(request, 'accounts/profile.html', context)
+
+
+def follow(request, user_pk):
+    User = get_user_model()
+    person = User.objects.get(pk=user_pk)
+    if person != request.user:
+        if request.user in person.followers.all():
+        # if person.followers.filter(pk=request.user.pk).exists():
+            person.followers.remove(request.user)
+        else:
+            person.followers.add(request.user)
+    
+    return redirect('accounts:profile', person.username)
