@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{greeting}}</h1>
+    <button @click="count++">{{count}}</button>
+    <p>{{count}}</p>
+    <h3>{{count}}</h3>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue   // JS 객체 구조 분해 할당
+    // : vue 객체에 내장된 함수들을 나타낸다.
+
+
+    //아래가 vue 어플리케이션
+    const app = createApp ({
+      setup() {
+        const count = ref(0)
+        const greeting = ref('hello')
+        return {
+          count,    // 키 이름과 값 이름이 같은 경우 단축 속성으로 사용 가능
+          greeting,
+        }
+      }
+    })
+    
+
+    app.mount('#app')    // 어딘가(#app)에 연결(탑재)하다.
+  </script>
+</body>
+
+</html>
