@@ -1,4 +1,4 @@
-d# Basic Syntax
+# Basic Syntax
 
 - [Template Syntax](#Template-Syntax)
 
