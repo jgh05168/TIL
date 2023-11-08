@@ -8,6 +8,8 @@
 
 - [vim 다루기](#vim-다루기)
 
+- [vi를 메모장 처럼](#vi를-메모장-처럼)
+
 ## Text Editor 개요
 
 리눅스의 대표적인 Editor
@@ -151,12 +153,75 @@
 #### 단축키
 
 - `gg` : 글 처음으로 이동하는 명령어
+    - 원하는 줄로 이동 : `원하는 줄 + gg`
 
 - `G` : 글 맨 마지막으로 이동하는 명령어
 
 - `dd` : 한 줄 삭제
 
-### Edit 모드
+### Edit(Insert) 모드
 
 - 타이밍 가능 모드
 - command 모드에서 `i`를 눌러 모드 진입이 가능하다.
+- `i` : 커서 앞쪽으로 insert 모드
+- `a` : 커서 뒷쪽으로 insert 모드
+
+<br>
+
+## vi를 메모장 처럼
+
+[사전 준비]
+
+- Line number 넣기 : `set nu`
+
+- Line number 빼기 : `set nonu`
+
+[반드시 알아야 하는 기능]
+
+- 저장, 불러오기
+
+- 맨 위로 이동, 맨 아래로 이동 : gg / shift + g
+
+- <span style='color: red;'>복사 붙여넣기</span>
+
+    - 복사 : Visual Mode에서 영역을 선택한 후 `y`를 누르기
+        - 한 줄 복사 : `yy`
+        - 여러 줄 복사 : `복사하고자 하는 줄 개수 + yy`
+    - 붙여넣기 : Visual Mode에서 `p`를 누르면 커서 뒷쪽에 붙여넣기가 된다.
+
+        - `shift + p` : 커서 앞쪽으로 붙여넣기
+
+- <span style='color: red;'>실행 취소, 다시 실행</span>
+
+    - 실행 취소 : `u`
+
+    - 다시 실행 : `Ctrl + r`
+
+- <span style='color: red;'>찾기, 치환</span>
+
+    - 찾기 : command mode에서 `/찾을단어`
+        - 문자열의 앞 쪽에 커서 위치
+    - 다음 검색 : `n`
+    - 이전 검색 : `N`
+
+    - 치환 : command line의 명령어 사용
+
+        `:%s/찾을단어/바꿀단어/바꾸고자 하는 것들 선택`
+        
+        - g : global. 파일 전체의 단어를 바꾼다.
+
+        - c : 어떤 방식으로 바꿀지 선택
+
+- <span style='color: red;'>한 줄 삭제</span>
+
+    - `dd`
+
+    - 여러 줄 삭제 : `삭제하고자 하는 줄 개수 + dd`
+
+### Visual Mode
+
+- 블록을 잡는 모드
+
+- Command 모드에서 `v`를 눌러 Visual 모드로 진입한다.
+
+#### Home / End : `shift + 4 / shift + 6`
