@@ -40,7 +40,7 @@ axios.get(storeURL)
     })
 
 const productIsEmpty = computed(() => {
-    return products.value.length > 0 ? true : false
+    return products.value.length
 })
 
 
