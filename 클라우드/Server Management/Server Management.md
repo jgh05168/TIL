@@ -23,7 +23,7 @@
 3. Secure and Flexibility : 보안 및 유연
 
 여러가지 리눅
-
+ 
 - 슬랙웨어
 
 - 데비안
