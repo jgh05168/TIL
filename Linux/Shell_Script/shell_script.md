@@ -14,7 +14,7 @@
     - 설정한 시간마다 정해진 백업 쉘 스크립트 실행
 - 배포 방법
 - 압축파일 관리
-- source code 설치
+- source code 설치  
 
 ## CLI Shell 종류
 
